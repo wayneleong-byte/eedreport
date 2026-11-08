@@ -4,9 +4,12 @@
 
 /* LIGHT MODE — used as a fallback; the app defaults to dark projection mode */
 :root {
-  --hud: 158 100% 40%;
-  --hud2: 193 100% 42%;
-  --amber: 39 95% 45%;
+  /* Glass Depth Deck — tech blue (light fallback; projection stays .dark) */
+  --hud: 202 90% 40%;
+  --hud2: 190 95% 38%;
+  --amber: 38 95% 42%;
+  --glass-shadow: 0 10px 32px rgba(0, 30, 70, 0.18), 0 2px 8px rgba(0, 80, 160, 0.1);
+  --glass-shadow-deep: 0 20px 50px rgba(0, 40, 90, 0.22), 0 4px 16px rgba(0, 120, 220, 0.14);
   --button-outline: rgba(0, 0, 0, 0.1);
   --badge-outline: rgba(0, 0, 0, 0.05);
   --opaque-button-border-intensity: -8;
@@ -21,31 +24,31 @@
   --sidebar: 214 28% 95%;
   --sidebar-foreground: 215 35% 14%;
   --sidebar-border: 214 20% 88%;
-  --sidebar-primary: 187 85% 33%;
+  --sidebar-primary: 205 85% 34%;
   --sidebar-primary-foreground: 0 0% 100%;
   --sidebar-accent: 214 24% 90%;
   --sidebar-accent-foreground: 215 35% 14%;
-  --sidebar-ring: 187 85% 33%;
+  --sidebar-ring: 205 85% 34%;
   --popover: 0 0% 100%;
   --popover-foreground: 215 35% 14%;
   --popover-border: 214 20% 88%;
-  --primary: 187 90% 30%;
+  --primary: 205 90% 32%;
   --primary-foreground: 0 0% 100%;
   --secondary: 214 24% 91%;
   --secondary-foreground: 215 35% 14%;
   --muted: 214 24% 93%;
   --muted-foreground: 215 14% 42%;
-  --accent: 187 60% 90%;
-  --accent-foreground: 187 90% 22%;
+  --accent: 205 70% 92%;
+  --accent-foreground: 205 90% 24%;
   --destructive: 350 70% 45%;
   --destructive-foreground: 0 0% 100%;
   --input: 214 20% 80%;
-  --ring: 187 85% 33%;
-  --chart-1: 187 85% 33%;
-  --chart-2: 210 80% 45%;
+  --ring: 205 85% 34%;
+  --chart-1: 205 85% 36%;
+  --chart-2: 190 80% 40%;
   --chart-3: 38 90% 50%;
-  --chart-4: 150 55% 40%;
-  --chart-5: 280 50% 55%;
+  --chart-4: 200 55% 42%;
+  --chart-5: 215 45% 48%;
   --font-sans: 'IBM Plex Sans', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
   --font-serif: 'IBM Plex Sans', 'Noto Sans TC', sans-serif;
   --font-mono: 'IBM Plex Mono', 'JetBrains Mono', Menlo, monospace;
@@ -110,44 +113,46 @@
   --opaque-button-border-intensity: 9;
   --elevate-1: rgba(255, 255, 255, 0.04);
   --elevate-2: rgba(255, 255, 255, 0.09);
-  /* Command Holodeck AMPED tokens */
-  --hud: 158 100% 50%;
-  --hud2: 193 100% 50%;
-  --amber: 39 100% 56%;
-  --background: 200 25% 2%;
-  --foreground: 160 55% 90%;
-  --border: 158 40% 18%;
-  --card: 160 35% 5%;
-  --card-foreground: 160 55% 90%;
-  --card-border: 158 35% 16%;
-  --sidebar: 160 30% 4%;
-  --sidebar-foreground: 160 55% 90%;
-  --sidebar-border: 158 35% 14%;
-  --sidebar-primary: 158 100% 50%;
-  --sidebar-primary-foreground: 200 25% 2%;
-  --sidebar-accent: 160 25% 10%;
-  --sidebar-accent-foreground: 160 55% 90%;
-  --sidebar-ring: 158 100% 50%;
-  --popover: 160 30% 6%;
-  --popover-foreground: 160 55% 90%;
-  --popover-border: 158 35% 18%;
-  --primary: 158 100% 50%;
-  --primary-foreground: 200 25% 2%;
-  --secondary: 160 25% 10%;
-  --secondary-foreground: 160 55% 90%;
-  --muted: 160 20% 9%;
-  --muted-foreground: 165 18% 55%;
-  --accent: 160 25% 12%;
-  --accent-foreground: 158 100% 60%;
+  /* Glass Depth Deck — tech blue / cyan HUD (preview 10) */
+  --hud: 202 100% 62%; /* #3db8ff */
+  --hud2: 190 100% 50%; /* #00d4ff */
+  --amber: 39 100% 56%; /* #ffb020 */
+  --glass-shadow: 0 10px 32px rgba(0, 30, 70, 0.5), 0 2px 8px rgba(0, 80, 160, 0.15);
+  --glass-shadow-deep: 0 20px 50px rgba(0, 40, 90, 0.65), 0 4px 16px rgba(0, 120, 220, 0.2);
+  --background: 220 60% 3%; /* #03060c */
+  --foreground: 212 67% 92%; /* #dce9f8 */
+  --border: 210 42% 24%;
+  --card: 216 60% 10%;
+  --card-foreground: 212 67% 92%;
+  --card-border: 202 70% 42%;
+  --sidebar: 216 50% 6%;
+  --sidebar-foreground: 212 67% 92%;
+  --sidebar-border: 210 40% 18%;
+  --sidebar-primary: 202 100% 62%;
+  --sidebar-primary-foreground: 220 60% 4%;
+  --sidebar-accent: 214 40% 14%;
+  --sidebar-accent-foreground: 212 67% 92%;
+  --sidebar-ring: 202 100% 62%;
+  --popover: 216 50% 8%;
+  --popover-foreground: 212 67% 92%;
+  --popover-border: 210 40% 22%;
+  --primary: 202 100% 62%;
+  --primary-foreground: 220 60% 4%;
+  --secondary: 214 40% 14%;
+  --secondary-foreground: 212 67% 92%;
+  --muted: 214 35% 12%;
+  --muted-foreground: 211 21% 52%; /* #6b849e */
+  --accent: 210 50% 16%;
+  --accent-foreground: 190 100% 62%;
   --destructive: 350 65% 55%;
   --destructive-foreground: 0 0% 100%;
-  --input: 158 25% 16%;
-  --ring: 158 100% 50%;
-  --chart-1: 158 100% 50%;
-  --chart-2: 193 100% 50%;
+  --input: 212 40% 20%;
+  --ring: 202 100% 62%;
+  --chart-1: 202 100% 62%;
+  --chart-2: 190 100% 50%;
   --chart-3: 39 100% 56%;
-  --chart-4: 150 55% 52%;
-  --chart-5: 280 55% 65%;
+  --chart-4: 205 70% 48%;
+  --chart-5: 215 55% 58%;
   --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
   --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
   --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
@@ -322,10 +327,10 @@
   }
 }
 
-/* EED Report — Command Holodeck AMPED */
+/* EED Report — Glass Depth Deck (preview 10): glass shell, float, tech blue */
 @layer utilities {
   .eed-holodeck-bg {
-    background: hsl(var(--background));
+    background-color: hsl(var(--background));
   }
   .eed-section-rule {
     background: linear-gradient(90deg, hsl(var(--primary) / 0.55), transparent);
@@ -339,49 +344,58 @@
     top: 0;
     height: 100%;
     width: 40%;
-    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    background: linear-gradient(90deg, transparent, hsl(var(--hud)), transparent);
     animation: eed-rule-sweep 2.8s ease-in-out infinite;
   }
   .eed-lock-corners {
     position: absolute;
-    inset: 0;
+    inset: -1px;
     pointer-events: none;
-  }
-  .eed-lock-corners::before,
-  .eed-lock-corners::after {
-    content: "";
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-color: hsl(var(--primary));
-    border-style: solid;
-    opacity: 0.7;
+    background:
+      linear-gradient(hsl(var(--hud)), hsl(var(--hud))) left top / 14px 2px no-repeat,
+      linear-gradient(hsl(var(--hud)), hsl(var(--hud))) left top / 2px 14px no-repeat,
+      linear-gradient(hsl(var(--hud)), hsl(var(--hud))) right top / 14px 2px no-repeat,
+      linear-gradient(hsl(var(--hud)), hsl(var(--hud))) right top / 2px 14px no-repeat,
+      linear-gradient(hsl(var(--hud)), hsl(var(--hud))) left bottom / 14px 2px no-repeat,
+      linear-gradient(hsl(var(--hud)), hsl(var(--hud))) left bottom / 2px 14px no-repeat,
+      linear-gradient(hsl(var(--hud)), hsl(var(--hud))) right bottom / 14px 2px no-repeat,
+      linear-gradient(hsl(var(--hud)), hsl(var(--hud))) right bottom / 2px 14px no-repeat;
+    opacity: 0.75;
     animation: eed-lock-pulse 2.4s ease-in-out infinite;
   }
-  .eed-lock-corners::before {
-    top: -1px;
-    left: -1px;
-    border-width: 2px 0 0 2px;
+  .eed-sec-tag {
+    color: hsl(var(--hud));
+    border: 1px solid hsl(var(--hud) / 0.32);
+    padding: 2px 8px;
+    background: hsl(var(--hud) / 0.06);
+    box-shadow: 0 0 12px hsl(var(--hud) / 0.3);
   }
-  .eed-lock-corners::after {
-    bottom: -1px;
-    right: -1px;
-    border-width: 0 2px 2px 0;
+  .eed-hud-title {
+    text-shadow: 0 0 16px hsl(var(--hud) / 0.55);
+  }
+  .eed-kpi-val {
+    text-shadow: 0 0 18px hsl(var(--hud) / 0.45);
   }
 }
 
-/* Fixed atmosphere layers */
+/* Fixed atmosphere — far grid, depth plate, blue scan, vignette */
+.dark .eed-holodeck-bg {
+  background-color: #03060c;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(0, 100, 200, 0.18), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(0, 180, 255, 0.1), transparent 50%);
+}
 .eed-scanlines {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 80;
-  opacity: 0.09;
+  opacity: 0.07;
   background: repeating-linear-gradient(
     0deg,
     transparent,
     transparent 2px,
-    hsl(158 100% 50% / 0.5) 3px
+    hsl(var(--hud) / 0.45) 3px
   );
   animation: eed-scan-move 7s linear infinite;
 }
@@ -390,21 +404,116 @@
   inset: 0;
   pointer-events: none;
   z-index: 70;
-  background: radial-gradient(ellipse at center, transparent 45%, rgb(0 0 0 / 0.55) 100%);
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 6, 18, 0.65) 100%);
 }
 .eed-holo-grid {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.12;
+  opacity: 0.1;
   background-image:
-    linear-gradient(hsl(158 100% 50% / 0.35) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(158 100% 50% / 0.35) 1px, transparent 1px);
-  background-size: 64px 64px;
-  transform: perspective(600px) rotateX(58deg) translateY(-20%) scale(1.6);
+    linear-gradient(hsl(var(--hud) / 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--hud) / 0.3) 1px, transparent 1px);
+  background-size: 72px 72px;
+  transform: perspective(700px) rotateX(60deg) translateY(-18%) scale(1.7);
   transform-origin: center top;
-  animation: eed-grid-pulse 6s ease-in-out infinite alternate;
+  animation: eed-grid-pulse 7s ease-in-out infinite alternate;
+}
+.eed-depth-far {
+  position: fixed;
+  inset: 10% 5%;
+  pointer-events: none;
+  z-index: 0;
+  border: 1px solid hsl(var(--hud) / 0.06);
+  transform: perspective(800px) rotateX(12deg) scale(1.05);
+  opacity: 0.4;
+}
+
+.eed-hud-bar {
+  background: rgba(8, 18, 32, 0.55);
+  border-bottom: 1px solid hsl(var(--hud) / 0.32);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 40, 80, 0.4);
+}
+.eed-glass {
+  position: relative;
+  background: rgba(10, 22, 40, 0.55);
+  border: 1px solid hsl(var(--hud) / 0.32);
+  border-radius: 4px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
+}
+.eed-glass-cell {
+  background: rgba(4, 14, 28, 0.65);
+  border: 1px solid hsl(var(--hud) / 0.32);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 40, 80, 0.45), inset 0 1px 0 hsl(var(--hud) / 0.12);
+}
+.eed-row-glass {
+  background: rgba(6, 16, 28, 0.72);
+  border: 1px solid hsl(var(--hud) / 0.2);
+  border-radius: 3px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--glass-shadow);
+}
+.eed-row-glass:hover,
+.eed-row-glass:focus-visible {
+  border-color: hsl(var(--hud2));
+  background: rgba(12, 28, 48, 0.85);
+  box-shadow: var(--glass-shadow-deep);
+}
+html:not(.dark) .eed-hud-bar,
+html:not(.dark) .eed-glass {
+  background: hsl(var(--card) / 0.78);
+  border-color: hsl(var(--primary) / 0.28);
+}
+html:not(.dark) .eed-glass-cell,
+html:not(.dark) .eed-row-glass {
+  background: hsl(var(--card) / 0.9);
+  border-color: hsl(var(--primary) / 0.22);
+}
+html:not(.dark) .eed-row-glass:hover,
+html:not(.dark) .eed-row-glass:focus-visible {
+  background: hsl(var(--card));
+  border-color: hsl(var(--primary));
+}
+html:not(.dark) .eed-vignette {
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(8, 24, 48, 0.16) 100%);
+}
+
+/* Float lives on a wrapper so hover lift (inner transform) can compose. */
+.eed-float {
+  position: relative;
+  z-index: 2;
+  animation: eed-float-y 3.4s ease-in-out 0.6s infinite;
+}
+.eed-float-b {
+  z-index: 4;
+  animation-duration: 3.4s;
+  animation-delay: 0.9s;
+}
+.eed-float-kpi {
+  animation-duration: 3s;
+  animation-delay: 0s;
+}
+.eed-float-kpi:nth-child(2) { animation-delay: 0.35s; }
+.eed-float-kpi:nth-child(3) { animation-delay: 0.7s; }
+.eed-float:hover,
+.eed-float:focus-within {
+  animation-play-state: paused;
+  z-index: 8;
+}
+.eed-lift {
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.22s, background-color 0.22s;
+}
+.eed-lift-panel:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--glass-shadow-deep);
 }
 
 .eed-hud-light {
@@ -441,7 +550,7 @@
   right: 0;
   top: 0;
   height: 2px;
-  background: hsl(var(--primary));
+  background: linear-gradient(90deg, hsl(var(--hud)), hsl(var(--hud2)));
   transform: scaleX(0);
   transform-origin: left;
   animation: eed-bar-fill 1s cubic-bezier(0.2, 0, 0, 1) 0.4s forwards;
@@ -451,14 +560,19 @@
   position: relative;
   overflow: hidden;
   opacity: 0;
-  transform: translateX(-16px);
+  translate: -16px 0;
   animation: eed-row-in 0.45s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+.eed-row.eed-lift:hover,
+.eed-row.eed-lift:focus-visible {
+  transform: translateY(-6px);
+  z-index: 6;
 }
 .eed-row .eed-row-sweep {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent, hsl(158 100% 50% / 0.12), transparent);
+  background: linear-gradient(90deg, transparent, hsl(var(--hud2) / 0.14), transparent);
   transform: translateX(-100%);
 }
 .eed-row:hover .eed-row-sweep,
@@ -473,7 +587,7 @@
   pointer-events: none;
   z-index: 90;
   opacity: 0;
-  border: 1px solid hsl(var(--primary));
+  border: 1px solid hsl(var(--hud2));
   mix-blend-mode: screen;
   transition: opacity 0.2s;
 }
@@ -481,7 +595,7 @@
 .eed-target::after {
   content: "";
   position: absolute;
-  background: hsl(var(--primary));
+  background: hsl(var(--hud2));
 }
 .eed-target::before {
   width: 1px;
@@ -501,7 +615,7 @@
 }
 
 .eed-status-live {
-  box-shadow: 0 0 12px hsl(158 100% 50% / 0.35);
+  box-shadow: 0 0 14px hsl(var(--hud) / 0.4);
   animation: eed-live-glow 1.8s ease-in-out infinite;
 }
 
@@ -510,8 +624,12 @@
   to { transform: translateY(12px); }
 }
 @keyframes eed-grid-pulse {
-  from { opacity: 0.08; }
-  to { opacity: 0.16; }
+  from { opacity: 0.06; }
+  to { opacity: 0.14; }
+}
+@keyframes eed-float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
 @keyframes eed-blink {
   0%, 100% { opacity: 0.35; }
@@ -529,7 +647,7 @@
   100% { transform: translateX(350%); }
 }
 @keyframes eed-row-in {
-  to { opacity: 1; transform: none; }
+  to { opacity: 1; translate: 0 0; }
 }
 @keyframes eed-row-sweep {
   from { transform: translateX(-100%); }
@@ -540,8 +658,8 @@
   50% { transform: scale(1.08); }
 }
 @keyframes eed-live-glow {
-  0%, 100% { box-shadow: 0 0 6px hsl(158 100% 50% / 0.2); }
-  50% { box-shadow: 0 0 16px hsl(158 100% 50% / 0.55); }
+  0%, 100% { box-shadow: 0 0 6px hsl(var(--hud) / 0.25); }
+  50% { box-shadow: 0 0 18px hsl(var(--hud2) / 0.55); }
 }
 @keyframes eed-enter-down {
   from { opacity: 0; transform: translateY(-14px); }
@@ -549,29 +667,58 @@
 }
 
 .eed-enter-down {
-  animation: eed-enter-down 0.45s cubic-bezier(0.2, 0, 0, 1) both;
+  animation: eed-enter-down 0.5s cubic-bezier(0.05, 0.7, 0.1, 1) both;
 }
 
-/* Projection pure: kill atmosphere & strong motion */
+/* Projection pure: kill atmosphere, blur, float, and strong motion */
 html.projection-pure .eed-scanlines,
 html.projection-pure .eed-holo-grid,
-html.projection-pure .eed-vignette {
+html.projection-pure .eed-vignette,
+html.projection-pure .eed-depth-far {
   display: none !important;
 }
 html.projection-pure .eed-hud-light,
 html.projection-pure .eed-status-live,
 html.projection-pure .eed-section-rule::after,
-html.projection-pure .eed-lock-corners::before,
-html.projection-pure .eed-lock-corners::after,
+html.projection-pure .eed-lock-corners,
 html.projection-pure .eed-kpi-cell::after,
-html.projection-pure .eed-target {
+html.projection-pure .eed-target,
+html.projection-pure .eed-float {
   animation: none !important;
+}
+html.projection-pure .eed-hud-light,
+html.projection-pure .eed-lock-corners,
+html.projection-pure .eed-target {
   opacity: 1 !important;
 }
 html.projection-pure .eed-row {
   opacity: 1 !important;
+  translate: none !important;
   transform: none !important;
   animation: none !important;
+}
+html.projection-pure .eed-float,
+html.projection-pure .eed-lift,
+html.projection-pure .eed-lift-panel:hover,
+html.projection-pure .eed-row.eed-lift:hover,
+html.projection-pure .eed-row.eed-lift:focus-visible {
+  transform: none !important;
+  animation: none !important;
+}
+html.projection-pure .eed-glass,
+html.projection-pure .eed-glass-cell,
+html.projection-pure .eed-row-glass,
+html.projection-pure .eed-hud-bar {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+html.projection-pure .eed-glass {
+  background: rgba(8, 16, 30, 0.94) !important;
+}
+html.projection-pure .eed-row-glass,
+html.projection-pure .eed-row-glass:hover,
+html.projection-pure .eed-row-glass:focus-visible {
+  background: rgba(6, 16, 28, 0.94) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -580,16 +727,23 @@ html.projection-pure .eed-row {
   .eed-hud-light,
   .eed-status-live,
   .eed-section-rule::after,
-  .eed-lock-corners::before,
-  .eed-lock-corners::after,
+  .eed-lock-corners,
   .eed-kpi-cell::after,
   .eed-target,
   .eed-row,
-  .eed-enter-down {
+  .eed-enter-down,
+  .eed-float {
     animation: none !important;
   }
   .eed-row {
     opacity: 1 !important;
+    translate: none !important;
+    transform: none !important;
+  }
+  .eed-float,
+  .eed-lift-panel:hover,
+  .eed-row.eed-lift:hover,
+  .eed-row.eed-lift:focus-visible {
     transform: none !important;
   }
   .eed-scanlines {

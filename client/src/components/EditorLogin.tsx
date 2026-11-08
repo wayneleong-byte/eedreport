@@ -39,7 +39,7 @@ export function EditorLogin({ onClose }: { onClose: () => void }) {
         <div className="mb-5 flex items-center justify-between">
           <div className="flex items-center gap-2 text-primary">
             <ShieldCheck className="h-5 w-5" />
-            <h2 className="font-serif text-lg font-bold text-card-foreground">編輯模式授權</h2>
+            <h2 className="font-serif text-xl font-bold text-card-foreground">編輯模式授權</h2>
           </div>
           <button
             data-testid="button-close-login"
@@ -50,7 +50,7 @@ export function EditorLogin({ onClose }: { onClose: () => void }) {
             <X className="h-4 w-4" />
           </button>
         </div>
-        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+        <p className="mb-4 text-base leading-relaxed text-muted-foreground">
           輸入編輯密鑰以解鎖內容編輯。密鑰只會暫存於頁面記憶體，不會寫入瀏覽器儲存。
         </p>
         <div className="flex items-center gap-2 rounded-lg border border-input bg-background px-3">
@@ -63,14 +63,14 @@ export function EditorLogin({ onClose }: { onClose: () => void }) {
             onChange={(e) => setValue(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && submit()}
             placeholder="EDIT SECRET"
-            className="w-full bg-transparent py-2.5 text-sm outline-none"
+            className="w-full bg-transparent py-2.5 text-base outline-none"
           />
         </div>
         <button
           data-testid="button-submit-secret"
           onClick={submit}
           disabled={checking}
-          className="mt-4 w-full rounded-lg bg-primary py-2.5 text-sm font-semibold text-primary-foreground hover-elevate disabled:opacity-50"
+          className="mt-4 w-full rounded-lg bg-primary py-2.5 text-base font-semibold text-primary-foreground hover-elevate disabled:opacity-50"
         >
           {checking ? "驗證中…" : "進入編輯模式"}
         </button>

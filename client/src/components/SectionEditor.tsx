@@ -78,7 +78,7 @@ export function SectionEditor({
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between border-b border-border/70 px-6 py-4">
-          <h2 className="font-serif text-xl font-bold text-card-foreground">管理區段 SECTIONS</h2>
+          <h2 className="font-serif text-[22px] font-bold text-card-foreground">管理區段 SECTIONS</h2>
           <button
             data-testid="button-close-section-editor"
             onClick={onClose}
@@ -105,7 +105,7 @@ export function SectionEditor({
           ))}
 
           <div className="mt-4 space-y-2 rounded-lg border border-dashed border-border p-3">
-            <p className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <p className="font-mono text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               新增區段
             </p>
             <input
@@ -113,20 +113,20 @@ export function SectionEditor({
               value={newTitle}
               onChange={(e) => setNewTitle(e.target.value)}
               placeholder="區段標題"
-              className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm"
+              className="w-full rounded-lg border border-input bg-background px-3 py-2 text-base"
             />
             <input
               data-testid="input-new-section-anchor"
               value={newAnchor}
               onChange={(e) => setNewAnchor(e.target.value)}
               placeholder="錨點，例如 SEC_G"
-              className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm"
+              className="w-full rounded-lg border border-input bg-background px-3 py-2 text-base"
             />
             <button
               data-testid="button-add-section"
               onClick={create}
               disabled={busy}
-              className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover-elevate disabled:opacity-50"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-base font-semibold text-primary-foreground hover-elevate disabled:opacity-50"
             >
               <Plus className="h-4 w-4" /> 新增區段
             </button>
@@ -187,13 +187,13 @@ function SectionRow({
         data-testid={`input-section-title-${section.id}`}
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="flex-1 rounded-lg border border-input bg-background px-3 py-2 text-sm"
+        className="flex-1 rounded-lg border border-input bg-background px-3 py-2 text-base"
       />
       <input
         data-testid={`input-section-anchor-${section.id}`}
         value={anchor}
         onChange={(e) => setAnchor(e.target.value)}
-        className="w-28 rounded-lg border border-input bg-background px-3 py-2 font-mono text-xs"
+        className="w-28 rounded-lg border border-input bg-background px-3 py-2 font-mono text-sm"
       />
       <button
         data-testid={`button-save-section-${section.id}`}

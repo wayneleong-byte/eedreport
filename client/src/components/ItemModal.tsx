@@ -73,11 +73,11 @@ export function ItemModal({
         <div className="flex items-start justify-between gap-4 border-b border-border/70 bg-secondary/40 px-6 py-5 sm:px-8">
           <div className="min-w-0 space-y-2">
             {item.meta && (
-              <p className="font-mono text-sm text-primary">{item.meta}</p>
+              <p className="font-mono text-base text-primary">{item.meta}</p>
             )}
             <h2
               data-testid="text-modal-title"
-              className="font-serif text-2xl font-bold leading-tight text-card-foreground sm:text-3xl"
+              className="font-serif text-[26px] font-bold leading-tight text-card-foreground sm:text-[32px]"
             >
               {item.title}
             </h2>
@@ -98,7 +98,7 @@ export function ItemModal({
           {item.description ? (
             <p
               data-testid="text-modal-description"
-              className="max-w-none whitespace-pre-line break-words text-lg leading-relaxed text-card-foreground/90"
+              className="max-w-none whitespace-pre-line break-words text-xl leading-relaxed text-card-foreground/90"
             >
               {item.description}
             </p>
@@ -179,7 +179,7 @@ export function ItemModal({
                   href={safeHref(item.videoUrl)}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-4 py-2.5 text-sm font-medium text-primary hover-elevate"
+                  className="inline-flex items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-4 py-2.5 text-base font-medium text-primary hover-elevate"
                 >
                   <ExternalLink className="h-4 w-4" />
                   開啟影片連結
@@ -200,7 +200,7 @@ export function ItemModal({
                 href={safeHref(item.attachmentUrl)}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary/50 px-4 py-2.5 text-sm font-medium text-card-foreground hover-elevate"
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-secondary/50 px-4 py-2.5 text-base font-medium text-card-foreground hover-elevate"
               >
                 <Paperclip className="h-4 w-4" />
                 開啟附件
@@ -240,7 +240,7 @@ export function ItemModal({
               <button
                 data-testid="button-prev-image"
                 onClick={(e) => { e.stopPropagation(); step(-1); }}
-                className="absolute left-2 top-1/2 flex -translate-y-1/2 items-center gap-1 rounded-full border border-border bg-card/85 px-3 py-3 text-sm font-medium text-foreground shadow-lg transition-colors hover:bg-card hover:border-primary/60 sm:left-6 sm:px-4"
+                className="absolute left-2 top-1/2 flex -translate-y-1/2 items-center gap-1 rounded-full border border-border bg-card/85 px-3 py-3 text-base font-medium text-foreground shadow-lg transition-colors hover:bg-card hover:border-primary/60 sm:left-6 sm:px-4"
                 aria-label="上一張"
               >
                 <ChevronLeft className="h-6 w-6" />
@@ -249,7 +249,7 @@ export function ItemModal({
               <button
                 data-testid="button-next-image"
                 onClick={(e) => { e.stopPropagation(); step(1); }}
-                className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center gap-1 rounded-full border border-border bg-card/85 px-3 py-3 text-sm font-medium text-foreground shadow-lg transition-colors hover:bg-card hover:border-primary/60 sm:right-6 sm:px-4"
+                className="absolute right-2 top-1/2 flex -translate-y-1/2 items-center gap-1 rounded-full border border-border bg-card/85 px-3 py-3 text-base font-medium text-foreground shadow-lg transition-colors hover:bg-card hover:border-primary/60 sm:right-6 sm:px-4"
                 aria-label="下一張"
               >
                 <span className="hidden sm:inline">下一張</span>
@@ -259,7 +259,7 @@ export function ItemModal({
           )}
           <div
             data-testid="text-lightbox-counter"
-            className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-border bg-card/85 px-4 py-1.5 font-mono text-sm text-foreground"
+            className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full border border-border bg-card/85 px-4 py-1.5 font-mono text-base text-foreground"
             onClick={(e) => e.stopPropagation()}
           >
             {zoom + 1} / {total}
@@ -272,7 +272,7 @@ export function ItemModal({
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <h4 className="font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+    <h4 className="font-mono text-sm font-semibold uppercase tracking-widest text-muted-foreground">
       {children}
     </h4>
   );
@@ -282,7 +282,7 @@ function Placeholder({ children }: { children: React.ReactNode }) {
   return (
     <p
       data-testid="text-placeholder"
-      className="rounded-lg border border-dashed border-border bg-secondary/30 px-4 py-3 text-sm leading-relaxed text-muted-foreground"
+      className="rounded-lg border border-dashed border-border bg-secondary/30 px-4 py-3 text-base leading-relaxed text-muted-foreground"
     >
       {children}
     </p>

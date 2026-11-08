@@ -25,8 +25,8 @@ export function StatusBadge({
       data-testid="status-badge"
       className={cn(
         "inline-flex items-center gap-1.5 border font-medium tracking-wide whitespace-nowrap",
-        size === "lg" ? "px-3.5 py-1.5 text-sm" : "px-2 py-0.5 text-xs",
-        t === "ready" && "border-emerald-400/50 text-emerald-300",
+        size === "lg" ? "px-3.5 py-1.5 text-base" : "px-2 py-1 text-sm",
+        t === "ready" && "border-[hsl(var(--hud2))] text-[hsl(var(--hud2))]",
         t === "progress" && "border-[hsl(var(--amber))] text-[hsl(var(--amber))]",
         t === "live" && "border-primary text-primary eed-status-live",
         t === "neutral" && "border-primary/40 text-primary",
