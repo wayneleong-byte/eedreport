@@ -7,7 +7,7 @@
 
 ## Railway
 
-1. 接此 repo，**Root Directory** 指向本分支根；用 `Dockerfile`
+1. 接此 repo，選分支 **`app`**；用 `Dockerfile`
 2. Volume 掛 `/data`
 3. 環境變數：
    - `DATABASE_PATH=/data/data.db`

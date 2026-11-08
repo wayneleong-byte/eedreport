@@ -1,0 +1,16 @@
+node_modules
+dist
+data.db
+data.db-shm
+data.db-wal
+data.db-journal
+.env
+.env.*
+!.env.example
+.git
+.gitignore
+*.log
+.DS_Store
+.vite
+previews
+**/eedreport-pages

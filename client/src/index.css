@@ -1,0 +1,602 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LIGHT MODE — used as a fallback; the app defaults to dark projection mode */
+:root {
+  --hud: 158 100% 40%;
+  --hud2: 193 100% 42%;
+  --amber: 39 95% 45%;
+  --button-outline: rgba(0, 0, 0, 0.1);
+  --badge-outline: rgba(0, 0, 0, 0.05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0, 0, 0, 0.03);
+  --elevate-2: rgba(0, 0, 0, 0.06);
+  --background: 210 30% 97%;
+  --foreground: 215 35% 14%;
+  --border: 214 20% 88%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 35% 14%;
+  --card-border: 214 22% 90%;
+  --sidebar: 214 28% 95%;
+  --sidebar-foreground: 215 35% 14%;
+  --sidebar-border: 214 20% 88%;
+  --sidebar-primary: 187 85% 33%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 214 24% 90%;
+  --sidebar-accent-foreground: 215 35% 14%;
+  --sidebar-ring: 187 85% 33%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 35% 14%;
+  --popover-border: 214 20% 88%;
+  --primary: 187 90% 30%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 214 24% 91%;
+  --secondary-foreground: 215 35% 14%;
+  --muted: 214 24% 93%;
+  --muted-foreground: 215 14% 42%;
+  --accent: 187 60% 90%;
+  --accent-foreground: 187 90% 22%;
+  --destructive: 350 70% 45%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 214 20% 80%;
+  --ring: 187 85% 33%;
+  --chart-1: 187 85% 33%;
+  --chart-2: 210 80% 45%;
+  --chart-3: 38 90% 50%;
+  --chart-4: 150 55% 40%;
+  --chart-5: 280 50% 55%;
+  --font-sans: 'IBM Plex Sans', 'Noto Sans TC', 'Microsoft JhengHei', 'PingFang TC', sans-serif;
+  --font-serif: 'IBM Plex Sans', 'Noto Sans TC', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', Menlo, monospace;
+  --radius: 0.625rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 2px 4px -1px hsl(0 0% 0% / 0);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 4px 6px -1px hsl(0 0% 0% / 0);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 8px 10px -1px hsl(0 0% 0% / 0);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(
+    from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(
+    from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(
+    from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(
+    from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(
+    from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(
+    from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(
+    from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+}
+
+.dark {
+  --button-outline: rgba(255, 255, 255, 0.1);
+  --badge-outline: rgba(255, 255, 255, 0.05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255, 255, 255, 0.04);
+  --elevate-2: rgba(255, 255, 255, 0.09);
+  /* Command Holodeck AMPED tokens */
+  --hud: 158 100% 50%;
+  --hud2: 193 100% 50%;
+  --amber: 39 100% 56%;
+  --background: 200 25% 2%;
+  --foreground: 160 55% 90%;
+  --border: 158 40% 18%;
+  --card: 160 35% 5%;
+  --card-foreground: 160 55% 90%;
+  --card-border: 158 35% 16%;
+  --sidebar: 160 30% 4%;
+  --sidebar-foreground: 160 55% 90%;
+  --sidebar-border: 158 35% 14%;
+  --sidebar-primary: 158 100% 50%;
+  --sidebar-primary-foreground: 200 25% 2%;
+  --sidebar-accent: 160 25% 10%;
+  --sidebar-accent-foreground: 160 55% 90%;
+  --sidebar-ring: 158 100% 50%;
+  --popover: 160 30% 6%;
+  --popover-foreground: 160 55% 90%;
+  --popover-border: 158 35% 18%;
+  --primary: 158 100% 50%;
+  --primary-foreground: 200 25% 2%;
+  --secondary: 160 25% 10%;
+  --secondary-foreground: 160 55% 90%;
+  --muted: 160 20% 9%;
+  --muted-foreground: 165 18% 55%;
+  --accent: 160 25% 12%;
+  --accent-foreground: 158 100% 60%;
+  --destructive: 350 65% 55%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 158 25% 16%;
+  --ring: 158 100% 50%;
+  --chart-1: 158 100% 50%;
+  --chart-2: 193 100% 50%;
+  --chart-3: 39 100% 56%;
+  --chart-4: 150 55% 52%;
+  --chart-5: 280 55% 65%;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 1px 2px -1px hsl(0 0% 0% / 0);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 2px 4px -1px hsl(0 0% 0% / 0);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 4px 6px -1px hsl(0 0% 0% / 0);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0), 0px 8px 10px -1px hsl(0 0% 0% / 0);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0);
+
+  /* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(
+    from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(
+    from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(
+    from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(
+    from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(
+    from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(
+    from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+
+  /* Fallback for older browsers */
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(
+    from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha
+  );
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/**
+ * Using the elevate system.
+ * Automatic contrast adjustment.
+ *
+ * <element className="hover-elevate" />
+ * <element className="active-elevate-2" />
+ *
+ * // Using the tailwind utility when a data attribute is "on"
+ * <element className="toggle-elevate data-[state=on]:toggle-elevated" />
+ * // Or manually controlling the toggle state
+ * <element className="toggle-elevate toggle-elevated" />
+ *
+ * Elevation systems have to handle many states.
+ * - not-hovered, vs. hovered vs. active  (three mutually exclusive states)
+ * - toggled or not
+ * - focused or not (this is not handled with these utilities)
+ *
+ * Even without handling focused or not, this is six possible combinations that
+ * need to be distinguished from eachother visually.
+ */
+@layer utilities {
+  /* Hide ugly search cancel button in Chrome until we can style it properly */
+  input[type='search']::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Placeholder styling for contentEditable div */
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  /* .no-default-hover-elevate/no-default-active-elevate is an escape hatch so consumers of
+   * buttons/badges can remove the automatic brightness adjustment on interactions
+   * and program their own. */
+  .no-default-hover-elevate {
+  }
+
+  .no-default-active-elevate {
+  }
+
+  /**
+   * Toggleable backgrounds go behind the content. Hoverable/active goes on top.
+   * This way they can stack/compound. Both will overlap the parent's borders!
+   * So borders will be automatically adjusted both on toggle, and hover/active,
+   * and they will be compounded.
+   */
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: -1;
+    /* sits behind content but above backdrop */
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  /* Does not work on elements with overflow:hidden! */
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: 999;
+    /* sits in front of content */
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+}
+
+/* EED Report — Command Holodeck AMPED */
+@layer utilities {
+  .eed-holodeck-bg {
+    background: hsl(var(--background));
+  }
+  .eed-section-rule {
+    background: linear-gradient(90deg, hsl(var(--primary) / 0.55), transparent);
+    position: relative;
+    overflow: hidden;
+  }
+  .eed-section-rule::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 40%;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary)), transparent);
+    animation: eed-rule-sweep 2.8s ease-in-out infinite;
+  }
+  .eed-lock-corners {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .eed-lock-corners::before,
+  .eed-lock-corners::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: hsl(var(--primary));
+    border-style: solid;
+    opacity: 0.7;
+    animation: eed-lock-pulse 2.4s ease-in-out infinite;
+  }
+  .eed-lock-corners::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+  }
+  .eed-lock-corners::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+/* Fixed atmosphere layers */
+.eed-scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 80;
+  opacity: 0.09;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsl(158 100% 50% / 0.5) 3px
+  );
+  animation: eed-scan-move 7s linear infinite;
+}
+.eed-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 70;
+  background: radial-gradient(ellipse at center, transparent 45%, rgb(0 0 0 / 0.55) 100%);
+}
+.eed-holo-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(hsl(158 100% 50% / 0.35) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(158 100% 50% / 0.35) 1px, transparent 1px);
+  background-size: 64px 64px;
+  transform: perspective(600px) rotateX(58deg) translateY(-20%) scale(1.6);
+  transform-origin: center top;
+  animation: eed-grid-pulse 6s ease-in-out infinite alternate;
+}
+
+.eed-hud-light {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  box-shadow: 0 0 10px currentColor;
+}
+.eed-hud-light.l1 {
+  color: hsl(var(--hud));
+  background: hsl(var(--hud));
+  animation: eed-blink 1.6s ease-in-out infinite;
+}
+.eed-hud-light.l2 {
+  color: hsl(var(--amber));
+  background: hsl(var(--amber));
+  animation: eed-blink 2.2s ease-in-out 0.4s infinite;
+}
+.eed-hud-light.l3 {
+  color: hsl(var(--hud2));
+  background: hsl(var(--hud2));
+  animation: eed-blink 1.9s ease-in-out 0.8s infinite;
+}
+
+.eed-kpi-cell {
+  position: relative;
+  overflow: hidden;
+}
+.eed-kpi-cell::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: hsl(var(--primary));
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: eed-bar-fill 1s cubic-bezier(0.2, 0, 0, 1) 0.4s forwards;
+}
+
+.eed-row {
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateX(-16px);
+  animation: eed-row-in 0.45s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+.eed-row .eed-row-sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, hsl(158 100% 50% / 0.12), transparent);
+  transform: translateX(-100%);
+}
+.eed-row:hover .eed-row-sweep,
+.eed-row:focus-visible .eed-row-sweep {
+  animation: eed-row-sweep 0.7s ease-out;
+}
+
+.eed-target {
+  position: fixed;
+  width: 48px;
+  height: 48px;
+  pointer-events: none;
+  z-index: 90;
+  opacity: 0;
+  border: 1px solid hsl(var(--primary));
+  mix-blend-mode: screen;
+  transition: opacity 0.2s;
+}
+.eed-target::before,
+.eed-target::after {
+  content: "";
+  position: absolute;
+  background: hsl(var(--primary));
+}
+.eed-target::before {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+}
+.eed-target::after {
+  height: 1px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+}
+.eed-target.on {
+  opacity: 0.85;
+  animation: eed-target-pulse 1s ease-in-out infinite;
+}
+
+.eed-status-live {
+  box-shadow: 0 0 12px hsl(158 100% 50% / 0.35);
+  animation: eed-live-glow 1.8s ease-in-out infinite;
+}
+
+@keyframes eed-scan-move {
+  from { transform: translateY(0); }
+  to { transform: translateY(12px); }
+}
+@keyframes eed-grid-pulse {
+  from { opacity: 0.08; }
+  to { opacity: 0.16; }
+}
+@keyframes eed-blink {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+@keyframes eed-lock-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+@keyframes eed-bar-fill {
+  to { transform: scaleX(1); }
+}
+@keyframes eed-rule-sweep {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(350%); }
+}
+@keyframes eed-row-in {
+  to { opacity: 1; transform: none; }
+}
+@keyframes eed-row-sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+@keyframes eed-target-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@keyframes eed-live-glow {
+  0%, 100% { box-shadow: 0 0 6px hsl(158 100% 50% / 0.2); }
+  50% { box-shadow: 0 0 16px hsl(158 100% 50% / 0.55); }
+}
+@keyframes eed-enter-down {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: none; }
+}
+
+.eed-enter-down {
+  animation: eed-enter-down 0.45s cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+/* Projection pure: kill atmosphere & strong motion */
+html.projection-pure .eed-scanlines,
+html.projection-pure .eed-holo-grid,
+html.projection-pure .eed-vignette {
+  display: none !important;
+}
+html.projection-pure .eed-hud-light,
+html.projection-pure .eed-status-live,
+html.projection-pure .eed-section-rule::after,
+html.projection-pure .eed-lock-corners::before,
+html.projection-pure .eed-lock-corners::after,
+html.projection-pure .eed-kpi-cell::after,
+html.projection-pure .eed-target {
+  animation: none !important;
+  opacity: 1 !important;
+}
+html.projection-pure .eed-row {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eed-scanlines,
+  .eed-holo-grid,
+  .eed-hud-light,
+  .eed-status-live,
+  .eed-section-rule::after,
+  .eed-lock-corners::before,
+  .eed-lock-corners::after,
+  .eed-kpi-cell::after,
+  .eed-target,
+  .eed-row,
+  .eed-enter-down {
+    animation: none !important;
+  }
+  .eed-row {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .eed-scanlines {
+    opacity: 0.04;
+  }
+  .eed-holo-grid {
+    animation: none !important;
+    opacity: 0.08;
+  }
+}

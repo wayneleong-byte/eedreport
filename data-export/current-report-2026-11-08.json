@@ -1,0 +1,443 @@
+{
+  "sections": [
+    {
+      "id": 1,
+      "title": "展覽中心展廳更新",
+      "anchor": "SEC_A",
+      "position": 0
+    },
+    {
+      "id": 2,
+      "title": "特備展覽",
+      "anchor": "SEC_B",
+      "position": 1
+    },
+    {
+      "id": 4,
+      "title": "比賽",
+      "anchor": "SEC_D",
+      "position": 2
+    },
+    {
+      "id": 7,
+      "title": "進行中",
+      "anchor": "SEC_G",
+      "position": 3
+    },
+    {
+      "id": 3,
+      "title": "已完成項目",
+      "anchor": "SEC_C",
+      "position": 4
+    },
+    {
+      "id": 5,
+      "title": "AI 教育工作",
+      "anchor": "SEC_E",
+      "position": 5
+    },
+    {
+      "id": 6,
+      "title": "其他事項",
+      "anchor": "SEC_F",
+      "position": 6
+    },
+    {
+      "id": 8,
+      "title": "合作洽談",
+      "anchor": "SEC_G",
+      "position": 7
+    }
+  ],
+  "items": [
+    {
+      "id": 3,
+      "sectionId": 2,
+      "title": "公共安全體驗展",
+      "meta": "2026.09.24 - 2027.02.21",
+      "description": "進行中。",
+      "status": "進行中",
+      "images": [
+        "https://cdn.imgchest.com/files/94fc9d8ba58d.jpg",
+        "https://cdn.imgchest.com/files/ff78ed4c5bb8.jpg",
+        "https://cdn.imgchest.com/files/d405f29a83ea.png"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 15,
+      "sectionId": 5,
+      "title": "「智醒老友記AI學園」",
+      "meta": "",
+      "description": "針對65歲或以上人士參與AI項目比例偏低，現針對性開展系列課程，6月開始。會提供小禮物以吸引參加。",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/b9ef83876149.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 18,
+      "sectionId": 1,
+      "title": "G01更新",
+      "meta": "2026 H4 - 2027 H1",
+      "description": "仍等待朱達一方案。\n朱達一本周會到澳門，於G01現場進行進度及設計內容協調及提供G01球幕系統新影片。",
+      "status": "籌備中",
+      "images": [
+        "https://cdn.imgchest.com/files/1b0ab60b74a7.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 19,
+      "sectionId": 1,
+      "title": "G07更新",
+      "meta": "2026 H3",
+      "description": "裝修進行中。",
+      "status": "籌備中",
+      "images": [
+        "https://cdn.imgchest.com/files/ce4fe098ceb3.jpeg",
+        "https://cdn.imgchest.com/files/94ebb1cf58c2.jpeg",
+        "https://cdn.imgchest.com/files/7eafd224f1f1.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 24,
+      "sectionId": 1,
+      "title": "G11 展品及 Ramp更新",
+      "meta": "2026 H3",
+      "description": "儀式改期。\nRamp部份裝飾大致完成。\n展品進行安裝及調試中。",
+      "status": "籌備中",
+      "images": [
+        "https://cdn.imgchest.com/files/1e3251fd8685.jpeg",
+        "https://cdn.imgchest.com/files/27f940d6e6be.jpeg",
+        "https://cdn.imgchest.com/files/5fb5cc4fdf9d.jpeg",
+        "https://cdn.imgchest.com/files/345767358659.jpeg",
+        "https://cdn.imgchest.com/files/ca201cdb7025.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 25,
+      "sectionId": 2,
+      "title": "浙江省自然博物院恐龍展覽規劃",
+      "meta": "2028 H4",
+      "description": "董事會杭州考察期間已針對化石展品進行檢視及就展覽推進進行會議",
+      "status": "籌備中",
+      "images": [
+        "https://cdn.imgchest.com/files/4ebb6ff941b4.jpg",
+        "https://cdn.imgchest.com/files/5a8b387a1f1b.jpg",
+        "https://cdn.imgchest.com/files/8af9b44e76c3.jpg",
+        "https://cdn.imgchest.com/files/589269d7da83.jpg",
+        "https://cdn.imgchest.com/files/d1a5061790b4.jpg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 31,
+      "sectionId": 3,
+      "title": "2026AI社區推廣活動(AI快閃)",
+      "meta": "",
+      "description": "全數場次完成。\n",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/69d8173a1919.jpg",
+        "https://cdn.imgchest.com/files/d30e0bfe2100.jpeg",
+        "https://cdn.imgchest.com/files/340add712e78.jpeg",
+        "https://cdn.imgchest.com/files/820234856656.JPG"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 35,
+      "sectionId": 2,
+      "title": "與騰訊合作\"神奇動物大發現\" 展覽",
+      "meta": "展期到2027年1月",
+      "description": "已開幕。\n下一站地點未落實。",
+      "status": "籌備中",
+      "images": [
+        "https://cdn.imgchest.com/files/2cb62991ef54.jpeg",
+        "https://cdn.imgchest.com/files/acf3aabe693e.jpeg",
+        "https://cdn.imgchest.com/files/75bec2857c87.jpeg",
+        "https://cdn.imgchest.com/files/315c71eaad10.jpeg",
+        "https://cdn.imgchest.com/files/31ae059b87b4.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 37,
+      "sectionId": 4,
+      "title": "2026粵港澳氣象小主播大賽",
+      "meta": "471份初賽作品",
+      "description": "10月31日 澳門區選拔賽",
+      "status": "進行中",
+      "images": [
+        "https://cdn.imgchest.com/files/44f5b9c825b2.webp"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "https://www.smg.gov.mo/zh/news-detail/1093",
+      "position": 0
+    },
+    {
+      "id": 38,
+      "sectionId": 4,
+      "title": "2026 FLL",
+      "meta": "籌備中",
+      "description": "",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/80328b35bd8a.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 40,
+      "sectionId": 5,
+      "title": "公眾班",
+      "meta": "進行中",
+      "description": "已接洽CPTTM有關高級認證課程\n16萬一班(30人)",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/5e6a7fac0490.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 42,
+      "sectionId": 7,
+      "title": "新學年活動",
+      "meta": "",
+      "description": "教師培訓、館校合作、普及計劃等有序開展中",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/fdbc569fa86a.png"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 44,
+      "sectionId": 6,
+      "title": "EDU預算執行及文件進度",
+      "meta": "",
+      "description": "",
+      "status": "",
+      "images": [
+        "https://res.cloudinary.com/momentum-media-group-pty-ltd/image/upload/e_unsharp_mask:80,c_fill,q_auto:best,f_auto,w_980/Accountants%20Daily%2FAccountants_Daily_Articleshutterstock_2413760877_1_jkznsh"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "https://wayneleong-byte.github.io/procure-viz/",
+      "position": 0
+    },
+    {
+      "id": 45,
+      "sectionId": 3,
+      "title": "蒸氣誌10月號",
+      "meta": "",
+      "description": "排版完成",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/e87581488c3a.png"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "https://www.canva.com/design/DAHViGfzbJ8/WcHuzv6W8cav8mwagfIrlQ/edit",
+      "position": 0
+    },
+    {
+      "id": 49,
+      "sectionId": 6,
+      "title": "SDG相關工作",
+      "meta": "",
+      "description": "鳥撞事件報告\nSDGs通識教育培訓師\n碳交易教學\nSDG HERO 比賽",
+      "status": "",
+      "images": [
+        "https://www.msc.org.mo/_next/image?url=https%3A%2F%2Fwww.msc.org.mo%2Fattachment%2Fimages%2F2026%2F06%2F08%2Fimage_1780900746_oE87Fex7.jpg&w=3840&q=75",
+        "https://cdn.imgchest.com/files/f35157ff80fb.jpeg",
+        "https://cdn.imgchest.com/files/50123c620878.jpeg",
+        "https://cdn.imgchest.com/files/a4a48a82f119.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "https://wayneleong-byte.github.io/carbon-market-course/",
+      "position": 0
+    },
+    {
+      "id": 51,
+      "sectionId": 2,
+      "title": "G15 + 觀景亭 ：奧比斯",
+      "meta": "時間未定",
+      "description": "對方展品製作中。",
+      "status": "籌備中",
+      "images": [
+        "https://cdn.imgchest.com/files/88d85dd9bf9c.jpg",
+        "https://cdn.imgchest.com/files/2e418ea54dcd.jpg",
+        "https://cdn.imgchest.com/files/7eecd1de43e2.jpg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 53,
+      "sectionId": 7,
+      "title": "可持續發展之星親子工作坊",
+      "meta": "",
+      "description": "",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/cc6763841d88.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 54,
+      "sectionId": 1,
+      "title": "G12 量子展品及相關教育活動",
+      "meta": "",
+      "description": "以量子電腦及實際應用作引入",
+      "status": "籌備中",
+      "images": [
+        "https://cdn.imgchest.com/files/ab83d3b0b580.jpg",
+        "https://cdn.imgchest.com/files/6925efcf4a26.jpg",
+        "https://cdn.imgchest.com/files/d6a96db0c7c8.jpg",
+        "https://cdn.imgchest.com/files/a840a7857109.jpg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "https://wayneleong-byte.github.io/msc-slides/quantum-teach/#3d",
+      "position": 0
+    },
+    {
+      "id": 55,
+      "sectionId": 4,
+      "title": "金蘋果獎2027",
+      "meta": "",
+      "description": "",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/0384e76b714b.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 56,
+      "sectionId": 3,
+      "title": "夜探活動",
+      "meta": "",
+      "description": "四場已完成",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/edf31893b413.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 57,
+      "sectionId": 7,
+      "title": "閱讀節",
+      "meta": "",
+      "description": "準備中。",
+      "status": "",
+      "images": [
+        "https://cdn.imgchest.com/files/330ce4577480.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 0
+    },
+    {
+      "id": 4,
+      "sectionId": 2,
+      "title": "橋樑主題展覽",
+      "meta": "2027 H1",
+      "description": "前期工作進行中",
+      "status": "籌備中",
+      "images": [
+        "https://cdn.imgchest.com/files/26f835452f5e.png"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 1
+    },
+    {
+      "id": 5,
+      "sectionId": 2,
+      "title": "無象之境 (Vision Pro)",
+      "meta": "2026",
+      "description": "12月會在科創育材空間再舉辦。\n",
+      "status": "進行中",
+      "images": [
+        "https://www.msc.org.mo/attachment/images/2026/05/18/image_1779095816_r21zE42P.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 2
+    },
+    {
+      "id": 6,
+      "sectionId": 2,
+      "title": "生態海岸線展覽",
+      "meta": "展期到2027年1月",
+      "description": "展出位置：G06\n今天開幕",
+      "status": "進行中",
+      "images": [
+        "https://cdn.imgchest.com/files/a2246cf305c4.jpeg",
+        "https://cdn.imgchest.com/files/705e924252ab.jpeg",
+        "https://cdn.imgchest.com/files/a605e296037f.jpeg"
+      ],
+      "audioUrl": "",
+      "videoUrl": "",
+      "attachmentUrl": "",
+      "position": 3
+    }
+  ]
+}
