@@ -6,10 +6,17 @@ import { insertSectionSchema, insertItemSchema } from "@shared/schema";
 import { z } from "zod";
 
 // Single-secret authorization. Server checks the x-edit-secret header against
-// EED_EDIT_SECRET environment variable. No hardcoded fallback — if the env var
-// is not set the server refuses all mutations, making the app safe-by-default.
+// EED_EDIT_SECRET (preferred), or Railway-safe split parts EED_EDIT_SECRET_P0..P3
+// joined in order. No hardcoded fallback — if neither is set the server refuses
+// all mutations, making the app safe-by-default.
 function expectedSecret(): string | undefined {
-  return process.env.EED_EDIT_SECRET;
+  const whole = process.env.EED_EDIT_SECRET;
+  if (whole) return whole;
+  const parts = [0, 1, 2, 3].map((i) => process.env[`EED_EDIT_SECRET_P${i}`]);
+  if (parts.every((p) => typeof p === "string" && p.length > 0)) {
+    return parts.join("");
+  }
+  return undefined;
 }
 
 function requireEditSecret(req: Request, res: Response, next: NextFunction) {
