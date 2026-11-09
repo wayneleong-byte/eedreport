@@ -580,40 +580,6 @@ html:not(.dark) .eed-vignette {
   animation: eed-row-sweep 0.7s ease-out;
 }
 
-.eed-target {
-  position: fixed;
-  width: 72px;
-  height: 72px;
-  pointer-events: none;
-  z-index: 90;
-  opacity: 0;
-  border: 1px solid hsl(var(--hud2));
-  mix-blend-mode: screen;
-  transition: opacity 0.2s;
-}
-.eed-target::before,
-.eed-target::after {
-  content: "";
-  position: absolute;
-  background: hsl(var(--hud2));
-}
-.eed-target::before {
-  width: 1px;
-  height: 100%;
-  left: 50%;
-  top: 0;
-}
-.eed-target::after {
-  height: 1px;
-  width: 100%;
-  top: 50%;
-  left: 0;
-}
-.eed-target.on {
-  opacity: 0.85;
-  animation: eed-target-pulse 1s ease-in-out infinite;
-}
-
 .eed-status-live {
   box-shadow: 0 0 20px hsl(var(--hud) / 0.55);
   animation: eed-live-glow 1.8s ease-in-out infinite;
@@ -649,10 +615,6 @@ html:not(.dark) .eed-vignette {
   from { transform: translateX(-100%); }
   to { transform: translateX(100%); }
 }
-@keyframes eed-target-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-}
 @keyframes eed-live-glow {
   0%, 100% { box-shadow: 0 0 10px hsl(var(--hud) / 0.35); }
   50% { box-shadow: 0 0 26px hsl(var(--hud2) / 0.7); }
@@ -677,14 +639,15 @@ html.projection-pure .eed-status-live,
 html.projection-pure .eed-section-rule::after,
 html.projection-pure .eed-lock-corners,
 html.projection-pure .eed-kpi-cell::after,
-html.projection-pure .eed-target,
 html.projection-pure .eed-float {
   animation: none !important;
 }
 html.projection-pure .eed-hud-light,
-html.projection-pure .eed-lock-corners,
-html.projection-pure .eed-target {
+html.projection-pure .eed-lock-corners {
   opacity: 1 !important;
+}
+html.projection-pure .eed-drag-comet {
+  display: none !important;
 }
 html.projection-pure .eed-row {
   opacity: 1 !important;
@@ -723,7 +686,6 @@ html.projection-pure .eed-row-glass:focus-visible {
   .eed-section-rule::after,
   .eed-lock-corners,
   .eed-kpi-cell::after,
-  .eed-target,
   .eed-row,
   .eed-enter-down,
   .eed-float {
@@ -743,4 +705,85 @@ html.projection-pure .eed-row-glass:focus-visible {
   .eed-scanlines {
     opacity: 0.04;
   }
+  .eed-drag-comet {
+    display: none !important;
+  }
+}
+
+/* Bright glass pointer. Inputs keep the text caret. Drag swaps to a light-dot. */
+:root {
+  --eed-cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20fill%3D%22%237af6ff%22%20d%3D%22M2.2%201.2%203.2%2027.5%2011.2%2020.2%2017.4%2031.2%2021.6%2029%2015.2%2018.2%2024.2%2017.6Z%22%2F%3E%3Cpath%20fill%3D%22%23f7feff%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%22.8%22%20d%3D%22M4.2%203.2%204.8%2022.8%2010.6%2017.6%2015.4%2026%2018.4%2024.4%2013.6%2016.2%2020.2%2015.8Z%22%2F%3E%3C%2Fsvg%3E") 3 2, auto;
+  --eed-cursor-drag: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%2211%22%20fill%3D%22%233de8ff%22%20opacity%3D%22.45%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%226.5%22%20fill%3D%22%23bff8ff%22%2F%3E%3Ccircle%20cx%3D%2216%22%20cy%3D%2216%22%20r%3D%223%22%20fill%3D%22%23ffffff%22%2F%3E%3C%2Fsvg%3E") 16 16, grabbing;
+}
+html,
+html * {
+  cursor: var(--eed-cursor) !important;
+}
+html input,
+html textarea,
+html select,
+html [contenteditable="true"] {
+  cursor: text !important;
+}
+html.eed-dragging,
+html.eed-dragging * {
+  cursor: var(--eed-cursor-drag) !important;
+  user-select: none;
+}
+html.eed-dragging input,
+html.eed-dragging textarea,
+html.eed-dragging select,
+html.eed-dragging [contenteditable="true"] {
+  cursor: text !important;
+}
+
+.eed-drag-handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 52px;
+  flex: none;
+  border: 1px solid hsl(var(--hud2) / 0.75);
+  border-radius: 3px;
+  background: linear-gradient(180deg, hsl(var(--hud) / 0.34), hsl(var(--hud2) / 0.14));
+  color: #f4fdff;
+  box-shadow: 0 0 16px hsl(var(--hud2) / 0.5), inset 0 0 10px hsl(var(--hud) / 0.4);
+  touch-action: none;
+}
+.eed-drag-handle.compact {
+  width: 32px;
+  height: 36px;
+}
+.eed-drag-handle:hover,
+.eed-drag-handle:focus-visible {
+  border-color: #e9fbff;
+  box-shadow: 0 0 22px hsl(var(--hud2) / 0.8), inset 0 0 12px hsl(var(--hud) / 0.55);
+  outline: 2px solid #e9fbff;
+  outline-offset: 2px;
+}
+/* Edit reorder remounts the rows; skip the intro slide so cards stay readable. */
+.eed-reorder-item .eed-row {
+  opacity: 1;
+  translate: none;
+  animation: none;
+}
+.eed-reorder-item.is-dragging {
+  z-index: 40;
+  position: relative;
+}
+.eed-reorder-item.is-dragging .eed-float {
+  animation-play-state: paused;
+}
+.eed-reorder-item.is-dragging .eed-row-glass {
+  border-color: hsl(var(--hud2));
+  box-shadow: var(--glass-shadow-deep), 0 0 28px hsl(var(--hud2) / 0.45);
+}
+.eed-drag-comet {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 96;
 }
