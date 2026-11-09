@@ -1,12 +1,12 @@
-import { useState, useMemo, useEffect, useCallback, useRef } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import type { ItemView } from "@shared/schema";
 import {
   ReportData,
   useEditAuth,
-  itemsForSection,
 } from "@/lib/report";
-import { ReportCard } from "@/components/ReportCard";
+import { ReportBoard } from "@/components/ReportBoard";
+import { DragComet } from "@/components/DragComet";
 import { ItemModal } from "@/components/ItemModal";
 import { ItemEditor } from "@/components/ItemEditor";
 import { SectionEditor } from "@/components/SectionEditor";
@@ -14,7 +14,6 @@ import { EditorLogin } from "@/components/EditorLogin";
 import {
   PenSquare,
   LogOut,
-  Plus,
   Layers,
   Sun,
   Moon,
@@ -37,7 +36,6 @@ export default function Home() {
   const [showSections, setShowSections] = useState(false);
   const [projectionPure, setProjectionPure] = useState(false);
   const [clock, setClock] = useState("");
-  const targetRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle("projection-pure", projectionPure);
@@ -68,25 +66,8 @@ export default function Home() {
   const tickSections = useTick(sectionCount);
   const tickLive = useTick(liveCount);
 
-  const onLock = useCallback((el: HTMLElement) => {
-    if (projectionPure) return;
-    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
-    const t = targetRef.current;
-    if (!t) return;
-    const r = el.getBoundingClientRect();
-    t.style.left = `${r.left + r.width / 2 - 36}px`;
-    t.style.top = `${r.top + r.height / 2 - 36}px`;
-    t.classList.add("on");
-  }, [projectionPure]);
-
-  const onUnlock = useCallback(() => {
-    targetRef.current?.classList.remove("on");
-  }, []);
-
   return (
-    <div className="eed-holodeck-bg relative min-h-screen text-foreground">
+    <div className="eed-holodeck-bg relative min-h-screen text-foreground" data-edit-mode={isEditor ? "true" : "false"}>
       {!projectionPure && (
         <>
           <div className="eed-depth-far" aria-hidden />
@@ -94,7 +75,7 @@ export default function Home() {
           <div className="eed-vignette" aria-hidden />
         </>
       )}
-      <div ref={targetRef} className="eed-target" aria-hidden />
+      <DragComet />
 
       {/* HUD top bar */}
       <header className="eed-hud-bar eed-enter-down relative z-30">
@@ -240,65 +221,17 @@ export default function Home() {
         </section>
 
         {/* Sections as dense rows */}
-        <main className="space-y-[42px]">
+        <main>
           {isLoading && <SkeletonRows />}
-
-          {data?.sections.map((section) => {
-            const items = itemsForSection(data, section.id);
-            return (
-              <section
-                key={section.id}
-                id={section.anchor || `section-${section.id}`}
-                data-testid={`section-${section.id}`}
-                className="scroll-mt-24"
-              >
-                <div className="mb-[21px] flex flex-wrap items-center gap-x-[18px] gap-y-2 font-mono text-[21px] lg:flex-nowrap">
-                  {section.anchor && (
-                    <span className="eed-sec-tag">
-                      {section.anchor}
-                    </span>
-                  )}
-                  <h2
-                    data-testid={`text-section-title-${section.id}`}
-                    className="min-w-0 font-sans text-[30px] font-semibold tracking-normal"
-                  >
-                    {section.title}
-                  </h2>
-                  <div className="eed-section-rule h-px flex-1" />
-                  <span className="text-muted-foreground">{items.length} ENTRIES</span>
-                  {isEditor && (
-                    <button
-                      data-testid={`button-add-item-${section.id}`}
-                      onClick={() => setCreatingFor(section.id)}
-                      className="inline-flex items-center gap-1.5 border border-primary/40 bg-primary/10 px-3 py-1.5 text-[18px] font-medium text-primary"
-                    >
-                      <Plus className="h-[18px] w-[18px]" /> 新增
-                    </button>
-                  )}
-                </div>
-
-                {items.length === 0 ? (
-                  <p className="border border-dashed border-primary/30 px-6 py-9 text-center text-[24px] text-muted-foreground">
-                    此區段尚無項目。
-                  </p>
-                ) : (
-                  <div className="flex flex-col gap-[18px]">
-                    {items.map((item, idx) => (
-                      <ReportCard
-                        key={item.id}
-                        item={item}
-                        index={idx}
-                        onOpen={() => setOpenItem(item)}
-                        onEdit={() => setEditItem(item)}
-                        onLock={onLock}
-                        onUnlock={onUnlock}
-                      />
-                    ))}
-                  </div>
-                )}
-              </section>
-            );
-          })}
+          {data && (
+            <ReportBoard
+              data={data}
+              isEditor={isEditor}
+              onOpen={setOpenItem}
+              onEdit={setEditItem}
+              onAdd={setCreatingFor}
+            />
+          )}
         </main>
 
         <footer className="mt-[60px] border-t border-primary/25 py-9 text-center font-mono text-[18px] tracking-[0.1em] text-muted-foreground">

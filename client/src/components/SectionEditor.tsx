@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { Section } from "@shared/schema";
 import { apiRequest, queryClient } from "@/lib/queryClient";
+import { persistOrder } from "@/lib/reorder";
 import { authHeaders, useEditAuth } from "@/lib/report";
 import { useToast } from "@/hooks/use-toast";
 import { X, Trash2, Plus, Save, ArrowUp, ArrowDown } from "lucide-react";
@@ -38,17 +39,7 @@ export function SectionEditor({
     if (target < 0 || target >= sections.length) return;
     const ordered = [...sections];
     [ordered[index], ordered[target]] = [ordered[target], ordered[index]];
-    await run(
-      () =>
-        Promise.all(
-          ordered.map((s, i) =>
-            s.position === i
-              ? Promise.resolve()
-              : apiRequest("PATCH", `/api/sections/${s.id}`, { position: i }, authHeaders(secret)),
-          ),
-        ),
-      "已調整區段順序",
-    );
+    await run(() => persistOrder("sections", ordered, secret), "已調整區段順序");
   }
 
   async function create() {

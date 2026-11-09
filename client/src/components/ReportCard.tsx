@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import type { ItemView } from "@shared/schema";
 import { StatusBadge } from "./StatusBadge";
 import { ImageIcon, Music, Video, Paperclip, Pencil } from "lucide-react";
@@ -9,35 +10,25 @@ export function ReportCard({
   index,
   onOpen,
   onEdit,
-  onLock,
-  onUnlock,
+  accessory,
 }: {
   item: ItemView;
   index: number;
   onOpen: () => void;
   onEdit: () => void;
-  onLock?: (el: HTMLElement) => void;
-  onUnlock?: () => void;
+  accessory?: ReactNode;
 }) {
   const { isEditor } = useEditAuth();
   const cover = item.images[0];
   const activate = isEditor ? onEdit : onOpen;
 
-  return (
-    <div
-      className="eed-float"
-      style={{ animationDelay: `${0.2 + (index % 4) * 0.4}s`, animationDuration: "4s" }}
-    >
+  const article = (
     <article
       data-testid={`card-item-${item.id}`}
       onClick={activate}
-      onMouseEnter={(e) => onLock?.(e.currentTarget)}
-      onMouseLeave={() => onUnlock?.()}
-      onFocus={(e) => onLock?.(e.currentTarget)}
-      onBlur={() => onUnlock?.()}
       className={cn(
-        "eed-row eed-lift eed-row-glass group grid cursor-pointer grid-cols-[84px_minmax(0,1fr)] items-center gap-[21px] px-[21px] py-[18px] sm:grid-cols-[108px_minmax(0,1fr)_165px_72px]",
-        "focus-visible:outline-none",
+        "eed-row eed-lift eed-row-glass group grid grid-cols-[84px_minmax(0,1fr)] items-center gap-[21px] px-[21px] py-[18px] sm:grid-cols-[108px_minmax(0,1fr)_165px_72px]",
+        "focus-visible:outline-none focus-visible:border-[hsl(var(--hud2))]",
       )}
       style={{ animationDelay: `${0.12 + index * 0.08}s` }}
       tabIndex={0}
@@ -117,6 +108,21 @@ export function ReportCard({
         )}
       </div>
     </article>
+  );
+
+  return (
+    <div
+      className="eed-float"
+      style={{ animationDelay: `${0.2 + (index % 4) * 0.4}s`, animationDuration: "4s" }}
+    >
+      {accessory ? (
+        <div className="flex items-center gap-3">
+          {accessory}
+          <div className="min-w-0 flex-1">{article}</div>
+        </div>
+      ) : (
+        article
+      )}
     </div>
   );
 }
